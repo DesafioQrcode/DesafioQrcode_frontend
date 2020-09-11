@@ -87,6 +87,7 @@ function Home() {
             {qrcode && <Qrcode
                 value={qrcode}>
             </Qrcode>}
+            <h3>{qrcode}</h3>
             <form onSubmit={newQrcode}>
             <Button
                 name="novo"
