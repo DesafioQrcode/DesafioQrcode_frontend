@@ -19,7 +19,6 @@ export const LabelStyled = styled.label`
 
 export const Container = styled.div`
   text-align: center;
-  background: #228B22;
   color: white;
   margin-left: 400px;
   margin-right: 400px;

@@ -7,7 +7,7 @@ export const ButtonStyled = styled.button`
     background: white;
     border-radius: 5px;
     border: 5px solid white;
-    color: #228B22;
+    color: black;
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
@@ -24,7 +24,6 @@ export const Container = styled.div`
   text-align: center;
   margin-left: 400px;
   margin-right: 400px;
-  background: #228B22;
   padding: 10px;
   align-content: center;
 `

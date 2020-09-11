@@ -38,55 +38,61 @@ function Home() {
         window.location.reload()
     }
     
-
-    return (
+    if(qrcode === ''){
+        return(
+            <Container>
+            <form onSubmit={submitFunction}>
+                <InputText 
+                    label="CPF: " 
+                    name="CPF"
+                    placeholder="Entre com o seu CPF"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                        setCpf(e.target.value)
+                    }} 
+                    value={cpf}
+                />
+                <InputText 
+                    label="CNPJ: " 
+                    name="CNPJ"
+                    placeholder="Entre com o CNPJ do recebedor"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                       setCnpj(e.target.value)
+                    }}
+                    value={cnpj}
+                />
+                <InputText 
+                    label="Valor: " 
+                    name="Valor"
+                    type="Integer"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                        setValor(Number(e.target.value))
+                     }} 
+                     value={valor}
+                />
+                <Button
+                    name="enviar"
+                    label="Enviar"
+                    type="submit"
+                />
+            </form>
+        </Container>
+        )}
+    else{
+        return(
             <Container >
-                {qrcode && <Qrcode 
-                    value={qrcode} 
-                 />}
-                <form onSubmit={submitFunction}>
-                    <InputText 
-                        label="CPF: " 
-                        name="CPF"
-                        placeholder="Entre com o seu CPF"
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                            setCpf(e.target.value)
-                        }} 
-                        value={cpf}
-                    />
-                    <InputText 
-                        label="CNPJ: " 
-                        name="CNPJ"
-                        placeholder="Entre com o CNPJ do recebedor"
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                           setCnpj(e.target.value)
-                        }}
-                        value={cnpj}
-                    />
-                    <InputText 
-                        label="Valor: " 
-                        name="Valor"
-                        type="Integer"
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                            setValor(Number(e.target.value))
-                         }} 
-                         value={valor}
-                    />
-                    <Button
-                        name="enviar"
-                        label="Enviar"
-                        type="submit"
-                    />
-                </form>
-                <form onSubmit={newQrcode}>
-                    <Button
-                        name="novo"
-                        label="Novo QRCode"
-                        type="reset"
-                        />
-                </form>
+            {qrcode && <Qrcode
+                value={qrcode}>
+            </Qrcode>}
+            <form onSubmit={newQrcode}>
+            <Button
+                name="novo"
+                label="Novo QRCode"
+                type="reset"
+                />
+            </form>
             </Container>
-    )
+            )
+        }
 }
 
 export default Home;
