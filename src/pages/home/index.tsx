@@ -46,6 +46,7 @@ function Home() {
                     label="CPF: " 
                     name="CPF"
                     placeholder="Entre com o seu CPF"
+                    required
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                         setCpf(e.target.value)
                     }} 
@@ -54,6 +55,7 @@ function Home() {
                 <InputText 
                     label="CNPJ: " 
                     name="CNPJ"
+                    required
                     placeholder="Entre com o CNPJ do recebedor"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                        setCnpj(e.target.value)
