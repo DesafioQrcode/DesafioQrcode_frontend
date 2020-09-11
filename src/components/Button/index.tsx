@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react'
 import {ButtonStyled, Container} from './style';
 
-function Button(){
+interface ButtonProps extends InputHTMLAttributes<HTMLButtonElement> {
+  label: string,
+  name: string,
+}
+
+const Button: React.FC<ButtonProps> = ({ label, name, ...rest }) => {
     return(
         <Container>
-          <ButtonStyled type="submit" >Enviar</ButtonStyled>
+          <ButtonStyled id={name} >{label}</ButtonStyled>
         </Container>
     )
 }
