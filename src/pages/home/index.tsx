@@ -29,13 +29,15 @@ function Home() {
             .then(response => {
                 const { qrCodeString } = response.data 
                 setQrcode(qrCodeString)
-                // console.log(qrCodeString)
+                console.log(qrCodeString)
             }) 
     }
 
     const newQrcode = (event: FormEvent) =>  {
-        event.preventDefault()
-        window.location.reload()
+        setQrcode("")
+        setCpf('')
+        setCnpj('')
+        setValor(0)
     }
     
     if(qrcode === ''){
